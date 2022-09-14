@@ -8,7 +8,7 @@ tags: R, tidyverse, methylkit
 
 In an effort to couple DNA methylation data to complementary RNA-seq data we are looking at what the DNA methylation landscape, DML look like. Oysters were exposed to ocean acidification. Males and females were included.
 
-TLDR- Sex related methylation differences are FAR greater than any OA associated methylatuon differences.
+TLDR- Sex related methylation differences are FAR greater than any OA associated methylation differences.
 
 *Sample information*
 
