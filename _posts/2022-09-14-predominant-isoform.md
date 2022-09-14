@@ -24,13 +24,13 @@ We start with the transcript expression table.
 
 reading it in
 
-```{r}
+```
 tx_exp <- read.csv("https://raw.githubusercontent.com/epigeneticstoocean/2018_L18-adult-methylation/main/data/whole_tx_table.csv")
 ```
 
 taking the entire data set
 
-```{r}
+```
 tx_exp %>%
   select(starts_with(c("gene_name", "t_name", "FPKM"))) %>%
   pivot_longer(cols = c(3:28)) %>%
