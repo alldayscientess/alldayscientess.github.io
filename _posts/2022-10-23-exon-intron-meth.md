@@ -127,3 +127,6 @@ A plot of exon v intron methylation for every gene
 Seems to be interesting difference in sex
 
 ![plt2](http://gannet.fish.washington.edu/seashell/snaps/ceabigr__RStudio_Server_2022-10-23_19-54-58.png)
+
+some csv FILES
+https://github.com/sr320/ceabigr/tree/main/output/43-exon-intron-methylation
