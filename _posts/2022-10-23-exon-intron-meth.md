@@ -30,7 +30,7 @@ First thing needed was exon and intron beds that have gene ID information linked
 
 Then intersecting 10 bedgraphs
 
-```{bash}
+```
  cd ../data/big/
 
  FILES=$(ls *bedgraph)
@@ -51,7 +51,7 @@ Then intersecting 10 bedgraphs
 
 ```
 
-```{bash}
+```
  cd ../data/big/
 
  FILES=$(ls *bedgraph)
@@ -75,35 +75,35 @@ Then intersecting 10 bedgraphs
 
 and then smashing all together
 
-```{bash}
+```
 cat ../output/43-exon-intron-methylation/*_mExon.out > ../output/43-exon-intron-methylation/exon-meth_all-samples.out
 ```
 
-```{bash}
+```
 cat ../output/43-exon-intron-methylation/*_mIntron.out > ../output/43-exon-intron-methylation/intron-meth_all-samples.out
 ```
 
 Then into `tidyverse`
 
-```{r}
+```
 exon_meth <- read.delim("../output/43-exon-intron-methylation/exon-meth_all-samples.out", header = FALSE)
 ```
 
-```{r}
+```
 intron_meth <- read.delim("../output/43-exon-intron-methylation/intron-meth_all-samples.out", header = FALSE)
 ```
 
 
 summarizing by geneID
 
-```{r}
+```
 em <- exon_meth %>%
    mutate(art = paste(V8, V9, sep = '_')) %>%
    group_by(art) %>%
    summarize(avg_meth = mean(V4))
 ```
 
-```{r}
+```
 int <- intron_meth %>%
    mutate(art = paste(V8, V9, sep = '_')) %>%
    group_by(art) %>%
@@ -113,7 +113,7 @@ int <- intron_meth %>%
 and joining by gene; separating out sample ID and sex.
 
 
-```{r}
+```
 exint <- inner_join(em, int, by = "art") %>%
    separate(art, into = c("gene", "sample"), sep = "_") %>%
    separate(sample, into = c("number", "sex"), sep = -1)
