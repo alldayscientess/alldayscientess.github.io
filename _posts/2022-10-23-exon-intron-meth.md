@@ -10,7 +10,7 @@ An effort to splice out exon and intron methylation levels on a per gene basis.
 
 First thing needed was exon and intron beds that have gene ID information linked.
 
-```{bash}
+```
 /home/shared/bedtools2/bin/intersectBed \
 -wb \
 -a ../genome-features/C_virginica-3.0_Gnomon_exon.bed \
@@ -19,7 +19,7 @@ First thing needed was exon and intron beds that have gene ID information linked
 > ../genome-features/C_virginica-3.0_Gnomon_exon-geneID.bed
 ```
 
-```{bash}
+```
 /home/shared/bedtools2/bin/intersectBed \
 -wb \
 -a ../genome-features/C_virginica-3.0_intron.bed \
@@ -91,4 +91,30 @@ exon_meth <- read.delim("../output/43-exon-intron-methylation/exon-meth_all-samp
 
 ```{r}
 intron_meth <- read.delim("../output/43-exon-intron-methylation/intron-meth_all-samples.out", header = FALSE)
+```
+
+
+summarizing by geneID
+
+```{r}
+em <- exon_meth %>%
+   mutate(art = paste(V8, V9, sep = '_')) %>%
+   group_by(art) %>%
+   summarize(avg_meth = mean(V4))
+```
+
+```{r}
+int <- intron_meth %>%
+   mutate(art = paste(V8, V9, sep = '_')) %>%
+   group_by(art) %>%
+   summarize(avg_meth = mean(V4))
+```
+
+and joining by gene; separating out sample ID and sex.
+
+
+```{r}
+exint <- inner_join(em, int, by = "art") %>%
+   separate(art, into = c("gene", "sample"), sep = "_") %>%
+   separate(sample, into = c("number", "sex"), sep = -1)
 ```
