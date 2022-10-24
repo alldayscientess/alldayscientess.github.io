@@ -118,3 +118,7 @@ exint <- inner_join(em, int, by = "art") %>%
    separate(art, into = c("gene", "sample"), sep = "_") %>%
    separate(sample, into = c("number", "sex"), sep = -1)
 ```
+
+A plot of exon v intron methylation for every gene
+
+![plot](http://gannet.fish.washington.edu/seashell/snaps/ceabigr__RStudio_Server_2022-10-23_19-41-36.png)
