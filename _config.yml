@@ -9,7 +9,7 @@ name: Another Day Another Destiny
 description: The lab notebook of Tess Cherlin
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: 
+avatar: https://twitter.com/alldayscientess/photo
 
 #
 # Flags below are optional
@@ -21,12 +21,12 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: sr320
+  github: alldayscientess
   instagram:
-  linkedin:
+  linkedin: https://www.linkedin.com/in/tess-cherlin-phd/
   pinterest:
   rss: # just type anything here for a working RSS icon
-  twitter: sr320
+  twitter: alldayscientess
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
