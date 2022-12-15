@@ -168,7 +168,7 @@ Step1_Traits = traits3
 
 # STEP 2 -- Medical History
 ### Mainly this is lengthly as it is required to combine multiple medical history instances into each cell
-```{r}
+```
 
 #################################################################################
 # PMH Patient Medical History
@@ -263,7 +263,7 @@ Step2_Medical_History = PMH_cleaned2
 ### Combine Clarity Demographics (STEP1) with Clarity Medical History (STEP2)
 ### Merge Clarity Demographics with PCOS Center Demographics
 ### Assess how good Clarity works
-```{r}
+```
 # Clarity Demographics
 clarity_Demographics = left_join(Step1_Traits, Step2_Medical_History, by = "MRN")
 
@@ -371,7 +371,7 @@ Combined_Constants6 = Combined_Constantsxx
 ### Vitals
 
 ### Medical History
-```{r}
+```
 
 CD_sub = clarity_Demographics[,c(1,6,8,9,16:18,23:35)]
 
@@ -391,7 +391,7 @@ write.table(MedicalHistory, "PCOS_Center_Clarity_Merged_Medical_History.csv")
 ```
 
 
-```{r}
+```
 dim(labs)
 dim(meds)
 dim(vitals)
@@ -402,7 +402,7 @@ PCOS_center$dataset <- "pcosCenter"
 ```
 
 # Blood Pressure
-```{r}
+```
 
 BP$dataset <- "clarity"
 
@@ -432,7 +432,7 @@ write.table(BP_FINAL, "PCOS_Center_Clarity_Merged_Blood_Pressure.csv")
 ```
 
 # LABS
-```{r}
+```
 
 labs$dataset <- "clarity"
 
@@ -466,7 +466,7 @@ write.table(Labs_FINAL, "PCOS_Center_Clarity_Merged_Labs.csv")
 ```
 
 # Vitals
-```{r}
+```
 vitals$dataset <- "clarity"
 vitals2 = vitals
 
@@ -511,8 +511,7 @@ write.table(Vitals_FINAL, "PCOS_Center_Clarity_Merged_Vitals.csv")
 
 
 # Medications
-```{r}
-#########################################################################################
+```
 meds$dataset <- "clarity"
 
 # No information from PCOS Center
@@ -537,7 +536,7 @@ write.table(Medications_FINAL, "PCOS_Center_Clarity_Merged_Medications.csv")
 
 
 # PCOS Center Data
-```{r}
+```
 
 PCOS_data = PCOS_center[,c(3,5,31:33,38:43,46:48,60:63,69:71)]
 
