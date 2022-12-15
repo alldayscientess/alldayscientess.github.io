@@ -1,3 +1,5 @@
+code: https://github.com/alldayscientess/alldayscientess.github.io/blob/master/_posts/2022-12-15-PCOS_Data_Merge1.md
+
 This is the code I used for the first batch of data merging for the PCOS Center. I ended up with different files for each category. 
 This will need to be changed for the final product.
 
