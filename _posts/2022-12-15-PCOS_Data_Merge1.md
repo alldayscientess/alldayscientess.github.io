@@ -1,4 +1,6 @@
 This is the code I used for the first batch of data merging for the PCOS Center. I ended up with different files for each category. This will need to be changed for the final product.
+
+
 <img width="370" alt="Screen Shot 2022-12-15 at 11 33 04 AM" src="https://user-images.githubusercontent.com/66582523/207916209-fa9470b3-843b-4adc-aa19-01c37d5003a7.png">
 
 
@@ -50,10 +52,10 @@ colnames(vitals) <- c("MRN", "CLINICAL_VISIT_DATE", "WEIGHT_LBS", "WEIGHT_KGS", 
 ```
 
 # STEP 1 -- TRAITS
-# Substances
-# Demographics
-# Nutrition
-# PCOS Visits
+### Substances
+### Demographics
+### Nutrition
+### PCOS Visits
 ```{r}
 
 
@@ -163,7 +165,7 @@ Step1_Traits = traits3
 ```
 
 # STEP 2 -- Medical History
-# Mainly this is lengthly as it is required to combine multiple medical history instances into each cell
+### Mainly this is lengthly as it is required to combine multiple medical history instances into each cell
 ```{r}
 
 #################################################################################
@@ -256,9 +258,9 @@ Step2_Medical_History = PMH_cleaned2
 ```
 
 # STEP 3 -- Deal with Demographics
-# Combine Clarity Demographics (STEP1) with Clarity Medical History (STEP2)
-# Merge Clarity Demographics with PCOS Center Demographics
-# Assess how good Clarity works
+### Combine Clarity Demographics (STEP1) with Clarity Medical History (STEP2)
+### Merge Clarity Demographics with PCOS Center Demographics
+### Assess how good Clarity works
 ```{r}
 # Clarity Demographics
 clarity_Demographics = left_join(Step1_Traits, Step2_Medical_History, by = "MRN")
@@ -359,14 +361,14 @@ Combined_Constants6 = Combined_Constantsxx
 
 
 # STEP 4 -- Medical Events
-# Need to merge PCOS Center Data with Clarity Data
-# Medical History
-# Labs
-# Medications
-# Blood Pressure
-# Vitals
+### Need to merge PCOS Center Data with Clarity Data
+### Medical History
+### Labs
+### Medications
+### Blood Pressure
+### Vitals
 
-# Medical History
+### Medical History
 ```{r}
 
 CD_sub = clarity_Demographics[,c(1,6,8,9,16:18,23:35)]
