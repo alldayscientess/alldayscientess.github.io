@@ -1,4 +1,6 @@
-This is the code I used for the first batch of data merging for the PCOS Center. I ended up with different files for each category. This will need to be changed for the final product.
+This is the code I used for the first batch of data merging for the PCOS Center. I ended up with different files for each category. 
+This will need to be changed for the final product.
+
 
 
 <img width="370" alt="Screen Shot 2022-12-15 at 11 33 04 AM" src="https://user-images.githubusercontent.com/66582523/207916209-fa9470b3-843b-4adc-aa19-01c37d5003a7.png">
@@ -16,7 +18,7 @@ setwd("~/Library/CloudStorage/Box-Box/pcosCenter/")
 ```
 
 # Read in PCOS Center
-```{r}
+```
 PCOS_center = read.csv("~/Library/CloudStorage/Box-Box/pcosCenter/PCOS_patients_472.TC.17Oct2022.csv")
 PCOS_center = PCOS_center[,1:91]
 #sample = read.csv("Sample_6551998.csv", header = FALSE)
@@ -25,7 +27,7 @@ PCOS_center = PCOS_center[,1:91]
 ```
 
 # Read in Penn Medicine files
-```{r}
+```
 
 demographics = read.csv("~/Library/CloudStorage/Box-Box/pcosCenter/anuja_shared_demographics_data.csv")
 colnames(demographics) <- c("MRN", "First_name", "Middle_name", "Last_name", "DOB", "LIVING", "RACE", "MARITAL STATUS", "USE OF MPM", 
@@ -56,7 +58,7 @@ colnames(vitals) <- c("MRN", "CLINICAL_VISIT_DATE", "WEIGHT_LBS", "WEIGHT_KGS", 
 ### Demographics
 ### Nutrition
 ### PCOS Visits
-```{r}
+```
 
 
 #################################################################################
